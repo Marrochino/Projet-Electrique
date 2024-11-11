@@ -1,0 +1,154 @@
+/* Style pour le menu */
+.navbar {
+    background-color: #3273dc; /* Couleur de fond */
+}
+
+.navbar-item {
+    color: #ffffff; /* Couleur du texte */
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-item:hover {
+    background-color: #ffffff;
+    color: #3273dc;
+}
+
+/* Style pour le menu mobile */
+.navbar-burger {
+    color: #ffffff;
+}
+
+.navbar-menu {
+    background-color: #3273dc;
+}
+
+
+
+/* Conteneur de l'image fixe */
+.fixed-image-container {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Ajuste la hauteur */
+    overflow: hidden;
+}
+
+.fixed-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assure que l'image prend bien tout l'espace */
+}
+
+/* Texte superposé */
+.overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 128, 0, 0.8); /* Fond vert semi-transparent */
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 300px; /* Ajuste la largeur du texte pour plus de lisibilité */
+}
+
+
+
+/* Section des services */
+.services {
+    padding: 50px 0;
+}
+.service-item {
+    text-align: center;
+    transition: transform 0.3s;
+}
+.service-item:hover {
+    transform: scale(1.05);
+}
+
+/* Section des références */
+.references img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Titre du savoir-faire */
+.savoir-faire-title {
+    font-size: 2.5em;
+    color: green;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 120px;
+}
+
+/* Style pour la liste des travaux */
+.works-list h2 {
+    color: green;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.works-list ul {
+    list-style-type: disc;
+    margin: 20px auto;
+    padding: 0;
+    width: 80%;
+    font-size: 1.1em;
+    line-height: 1.6em;
+    color: #333;
+}
+
+.works-list ul li {
+    margin: 5px 0;
+}
+
+/* Galerie d'images */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.image-gallery img {
+    width: calc(20% - 10px);
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Couleur de base pour le vert */
+:root {
+    --green: #2ecc71; /* Vert principal */
+    --dark-green: #27ae60; /* Vert foncé pour survol */
+}
+
+/* Styles pour la section avec image de fond */
+.hero {
+    position: relative;
+    color: white;
+}
+
+.hero .title,
+.hero .subtitle {
+    color: white;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7); /* Ombre pour lisibilité */
+}
+
+/* Style du bouton avec les couleurs vertes */
+.hero .button.is-green {
+    background-color: var(--green);
+    color: white;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero .button.is-green:hover {
+    background-color: var(--dark-green);
+}

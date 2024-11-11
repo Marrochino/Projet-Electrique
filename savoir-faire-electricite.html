@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énergie électrique – Détail</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Menu de navigation amélioré -->
+    <nav class="navbar is-fixed-top has-background-primary">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item has-text-white has-text-weight-bold" href="index.html">
+                    Mon Portfolio
+                </a>
+                <!-- Bouton Hamburger pour mobile -->
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item has-text-white" href="index.html">Accueil</a>
+                    <a class="navbar-item has-text-white" href="about.html">À propos</a>
+                    <a class="navbar-item has-text-white" href="devis.html">Devis</a>
+                    <a class="navbar-item has-text-white" href="works.html">Nos travaux</a>
+                    <a class="navbar-item has-text-white" href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burgerIcon = document.querySelector('.navbar-burger');
+            const navbarMenu = document.querySelector('#navbarMenu');
+
+            burgerIcon.addEventListener('click', () => {
+                navbarMenu.classList.toggle('is-active');
+                burgerIcon.classList.toggle('is-active'); // Activer/désactiver le burger
+            });
+        });
+    </script>
+
+    <!-- Contenu principal -->
+    <div class="content">
+        <h1 class="savoir-faire-title">Énergie électrique – BT/HT</h1>
+
+        <!-- Liste des travaux possibles -->
+        <div class="works-list">
+            <h2>Travaux possibles</h2>
+            <ul>
+                <li>Installation de réseaux électriques en basse et haute tension</li>
+                <li>Maintenance des installations électriques</li>
+                <li>Conception et réalisation de tableaux électriques</li>
+                <li>Éclairage industriel et public</li>
+                <li>Détection et protection contre les surcharges</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Pied de page -->
+    <footer class="footer has-background-success">
+        <div class="container">
+            <div class="columns is-mobile is-centered">
+                <!-- Logo Section -->
+                <div class="column is-4 has-text-centered">
+                    <img src="logo.png" alt="Logo de l'entreprise" style="max-width: 180px; height: auto;">
+                </div>
+
+                <!-- Liens utiles -->
+                <div class="column is-4">
+                    <h4 class="title is-5 has-text-white">Liens utiles</h4>
+                    <ul>
+                        <li><a href="index.html" class="has-text-white">Accueil</a></li>
+                        <li><a href="about.html" class="has-text-white">À propos</a></li>
+                        <li><a href="devis.html" class="has-text-white">Devis</a></li>
+                        <li><a href="works.html" class="has-text-white">Nos travaux</a></li>
+                        <li><a href="contact.html" class="has-text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div class="column is-4">
+                    <h4 class="title is-5 has-text-white">Suivez-nous</h4>
+                    <div class="buttons is-justify-content-center">
+                        <a href="https://www.facebook.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.twitter.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns is-mobile is-centered">
+                <!-- Informations légales -->
+                <div class="column is-8 has-text-centered">
+                    <p class="has-text-white">© 2024 Électricien Pro - Tous droits réservés.</p>
+                    <p class="has-text-white">
+                        <a href="mentions-legales.html" class="has-text-white">Mentions légales</a> | 
+                        <a href="politique-confidentialite.html" class="has-text-white">Politique de confidentialité</a> | 
+                        <a href="cookies.html" class="has-text-white">Politique des cookies</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inclure FontAwesome pour les icônes sociales -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+
+
+</body>
+</html>
+
+
+</body>
+</html>

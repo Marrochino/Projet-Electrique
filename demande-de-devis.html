@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devis - Mon Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Définir les couleurs et les styles globaux */
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        
+        /* Section principale améliorée */
+        .hero {
+            background: linear-gradient(to right, #2ecc71, #27ae60);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+        .hero .title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeIn 2s ease-out;
+        }
+        .hero .subtitle {
+            font-size: 1.25rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            animation: fadeIn 2.5s ease-out;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            margin-top: -60px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .button.is-primary {
+            background-color: #2ecc71;
+            border-radius: 25px;
+        }
+
+        .button.is-primary:hover {
+            background-color: #27ae60;
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Style pour la section FAQ */
+        .faq-container {
+            background-color: #f4f4f4;
+            padding: 50px 0;
+            margin-top: 60px;
+        }
+
+        .faq-container h3 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .faq-item {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Animation fadeIn */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu de navigation -->
+    <!-- Menu de navigation -->
+    <nav class="navbar is-fixed-top">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                Mon Portfolio
+            </a>
+            <!-- Bouton Hamburger pour mobile -->
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="index.html">Accueil</a>
+                <a class="navbar-item" href="about.html">À propos</a>
+                <a class="navbar-item" href="devis.html">Devis</a>
+                <a class="navbar-item" href="works.html">Nos travaux</a>
+                <a class="navbar-item" href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Activer le menu burger sur mobile
+            const burgerIcon = document.querySelector('.navbar-burger');
+            const navbarMenu = document.querySelector('#navbarMenu');
+    
+            burgerIcon.addEventListener('click', () => {
+                navbarMenu.classList.toggle('is-active'); // Activer/désactiver le menu
+            });
+        });
+    </script>
+
+    <!-- Section principale pour la page de Devis -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="title">Obtenez un Devis Personnalisé</h1>
+            <p class="subtitle">Nous vous offrons un devis sur mesure pour tous vos besoins en électricité, sécurité, gestion technique des bâtiments et bien plus. Remplissez simplement le formulaire ci-dessous, et nos experts vous répondront dans les plus brefs délais.</p>
+        </div>
+    </section>
+
+    <!-- Formulaire de Devis -->
+    <section class="section">
+        <div class="container">
+            <div class="form-container">
+                <h2 class="title is-3 has-text-centered section-title">Demandez un devis</h2>
+                <form action="process-devis.php" method="post">
+                    <div class="columns">
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Nom</label>
+                                <div class="control">
+                                    <input class="input" type="text" name="nom" placeholder="Votre nom" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="field">
+                                <label class="label">Prénom</label>
+                                <div class="control">
+                                    <input class="input" type="text" name="prenom" placeholder="Votre prénom" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Email</label>
+                        <div class="control">
+                            <input class="input" type="email" name="email" placeholder="Votre email" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Téléphone</label>
+                        <div class="control">
+                            <input class="input" type="tel" name="telephone" placeholder="Votre numéro de téléphone" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Sujet</label>
+                        <div class="control">
+                            <input class="input" type="text" name="sujet" placeholder="Sujet de votre demande" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Message</label>
+                        <div class="control">
+                            <textarea class="textarea" name="message" placeholder="Décrivez votre projet" required></textarea>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-primary is-fullwidth" type="submit">Envoyer votre demande</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section FAQ -->
+    <section class="faq-container">
+        <div class="container">
+            <h3 class="title">Questions Fréquentes</h3>
+            <div class="faq-item">
+                <strong>Quel est le délai de réponse pour un devis ?</strong>
+                <p>Nous vous enverrons votre devis dans un délai de 48 heures après réception de votre demande.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Faites-vous des devis gratuits ?</strong>
+                <p>Oui, tous nos devis sont gratuits et sans engagement.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="footer has-background-success">
+        <div class="container">
+            <div class="columns is-mobile is-centered">
+                <!-- Logo Section -->
+                <div class="column is-4 has-text-centered">
+                    <img src="logo.png" alt="Logo de l'entreprise" style="max-width: 180px; height: auto;">
+                </div>
+
+                <!-- Liens utiles -->
+                <div class="column is-4">
+                    <h4 class="title is-5 has-text-white">Liens utiles</h4>
+                    <ul>
+                        <li><a href="index.html" class="has-text-white">Accueil</a></li>
+                        <li><a href="about.html" class="has-text-white">À propos</a></li>
+                        <li><a href="devis.html" class="has-text-white">Devis</a></li>
+                        <li><a href="works.html" class="has-text-white">Nos travaux</a></li>
+                        <li><a href="contact.html" class="has-text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div class="column is-4">
+                    <h4 class="title is-5 has-text-white">Suivez-nous</h4>
+                    <div class="buttons is-justify-content-center">
+                        <a href="https://www.facebook.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.twitter.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns is-mobile is-centered">
+                <!-- Informations légales -->
+                <div class="column is-8 has-text-centered">
+                    <p class="has-text-white">© 2024 Électricien Pro - Tous droits réservés.</p>
+                    <p class="has-text-white">
+                        <a href="mentions-legales.html" class="has-text-white">Mentions légales</a> | 
+                        <a href="politique-confidentialite.html" class="has-text-white">Politique de confidentialité</a> | 
+                        <a href="cookies.html" class="has-text-white">Politique des cookies</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inclure FontAwesome pour les icônes sociales -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+
+
+
+
+</body>
+</html>

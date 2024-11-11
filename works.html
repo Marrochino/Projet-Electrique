@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Travaux - Portfolio Électricien</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ajout d'un fond de page plus élégant */
+        body {
+            background-color: #f4f7fa;
+            font-family: 'Arial', sans-serif;
+            padding-top: 70px; /* Pour éviter que le contenu soit masqué sous la navbar */
+        }
+
+        
+
+        /* Amélioration du titre */
+        .title.has-text-success {
+            color: #2ecc71;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Style des sections */
+        .section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content h2 {
+            color: #2ecc71;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .columns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .column {
+            margin-bottom: 20px;
+        }
+
+        /* Effet d'ombre et bordure arrondie sur les images */
+        .image img {
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Personnalisation des boutons */
+        .button.is-success {
+            background-color: #2ecc71;
+            color: white;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .button.is-success:hover {
+            background-color: #27ae60;
+        }
+
+        .video-container iframe {
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .video-container iframe:hover {
+            transform: scale(1.05);
+        }
+
+        .social-icons a {
+            margin: 10px;
+        }
+
+        /* Carrousel Slick */
+        .slick-carousel img {
+            border-radius: 8px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .title.has-text-success {
+                font-size: 2.5rem;
+            }
+            .columns.is-multiline {
+                flex-direction: column;
+            }
+        }
+
+        /* Flottant bouton contact */
+        .contact-btn {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            background-color: #2ecc71;
+            border-radius: 50%;
+            padding: 20px;
+            font-size: 1.5rem;
+            color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu de navigation -->
+    <nav class="navbar is-fixed-top">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                Mon Portfolio
+            </a>
+            <!-- Bouton Hamburger pour mobile -->
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="index.html">Accueil</a>
+                <a class="navbar-item" href="about.html">À propos</a>
+                <a class="navbar-item" href="devis.html">Devis</a>
+                <a class="navbar-item" href="works.html">Nos travaux</a>
+                <a class="navbar-item" href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Activer le menu burger sur mobile
+            const burgerIcon = document.querySelector('.navbar-burger');
+            const navbarMenu = document.querySelector('#navbarMenu');
+    
+            burgerIcon.addEventListener('click', () => {
+                navbarMenu.classList.toggle('is-active'); // Activer/désactiver le menu
+            });
+        });
+    </script>
+
+    <!-- Section principale des travaux -->
+    <section class="section">
+        <div class="container">
+            <h1 class="title has-text-success">Nos Réalisations</h1>
+            <p class="subtitle">Découvrez les projets réalisés par notre équipe d'électriciens professionnels, spécialisés dans des installations et interventions de haute qualité.</p>
+
+            <!-- Section Texte et Images -->
+            <div class="content">
+                <h2 class="title is-4">Projets Récents</h2>
+                <p>Nous avons réalisé des projets variés, allant de l'installation électrique dans des bâtiments résidentiels aux systèmes de contrôle dans des espaces industriels.</p>
+
+                <div class="columns is-multiline">
+                    <!-- Photo 1 -->
+                    <div class="column is-4">
+                        <figure class="image is-3by2">
+                            <img src="img/eleclerage.jpg" alt="Photo de projet électrique 1">
+                        </figure>
+                        <p>Installation complète d'un système électrique dans un complexe.</p>
+                    </div>
+
+                    <!-- Photo 2 -->
+                    <div class="column is-4">
+                        <figure class="image is-3by2">
+                            <img src="img/travaux_secu.jpg" alt="Photo de projet électrique 2">
+                        </figure>
+                        <p>Installation des portes coupe-feu et des indicateurs de sortie de secours.</p>
+                    </div>
+
+                    <!-- Photo 3 -->
+                    <div class="column is-4">
+                        <figure class="image is-3by2">
+                            <img src="img/installation_microphone.jpg" alt="Photo de projet électrique 3">
+                        </figure>
+                        <p>Installation de microphones reliés à toutes les enceintes du complexe.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Vidéos -->
+            <div class="content">
+                <h2 class="title is-4">Vidéos de nos Interventions</h2>
+                <p>Visualisez nos interventions et installations à travers ces vidéos. Nos équipes utilisent les meilleures techniques et équipements pour des résultats optimaux.</p>
+                
+                <div class="columns is-multiline">
+                    <!-- Vidéo 1 -->
+                    <div class="column is-6">
+                        <div class="video-container">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/videoID1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <p>Installation de systèmes de sécurité électrique.</p>
+                    </div>
+                    <!-- Vidéo 2 -->
+                    <div class="column is-6">
+                        <div class="video-container">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/videoID2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <p>Mise en conformité d'installations électriques industrielles.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Témoignages Clients -->
+            <div class="content">
+                <h2 class="title is-4">Témoignages de nos Clients</h2>
+                <p>Voici ce que disent nos clients à propos de notre travail :</p>
+                <div class="columns">
+                    <div class="column is-4">
+                        <div class="box">
+                            <p>"Une équipe très professionnelle et réactive. Les installations ont été réalisées dans les délais et selon les normes."</p>
+                            <p><strong>Client 1</strong></p>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="box">
+                            <p>"Nous avons eu une très bonne expérience avec cette équipe. Leur expertise nous a permis de respecter nos délais serrés."</p>
+                            <p><strong>Client 2</strong></p>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <div class="box">
+                            <p>"Service rapide et de qualité. Je recommande vivement cette entreprise pour des installations électriques."</p>
+                            <p><strong>Client 3</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Liens vers les réseaux sociaux -->
+            <div class="content">
+                <h2 class="title is-4">Suivez-nous</h2>
+                <p>Pour en savoir plus sur nos réalisations et nos dernières actualités, suivez-nous sur nos réseaux sociaux.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/votreprofil" target="_blank" class="button is-success is-outlined">Instagram</a>
+                    <a href="https://www.youtube.com/votrechaine" target="_blank" class="button is-success is-outlined">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bouton flottant pour le contact -->
+    <a href="contact.html" class="contact-btn">📞</a>
+
+    <!-- Pied de page -->
+    <footer class="footer has-background-success">
+        <div class="container">
+            <div class="columns is-mobile is-centered">
+                <!-- Logo Section -->
+                <div class="column is-4 has-text-centered">
+                    <img src="logo.png" alt="Logo de l'entreprise" style="max-width: 180px; height: auto;">
+                </div>
+
+                <!-- Liens utiles -->
+                <div class="column is-4">
+                    <h4 class="title is-5 has-text-white">Liens utiles</h4>
+                    <ul>
+                        <li><a href="index.html" class="has-text-white">Accueil</a></li>
+                        <li><a href="about.html" class="has-text-white">À propos</a></li>
+                        <li><a href="devis.html" class="has-text-white">Devis</a></li>
+                        <li><a href="works.html" class="has-text-white">Nos travaux</a></li>
+                        <li><a href="contact.html" class="has-text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div class="column is-4">
+                    <h4 class="title is-5 has-text-white">Suivez-nous</h4>
+                    <div class="buttons is-justify-content-center">
+                        <a href="https://www.facebook.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.twitter.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns is-mobile is-centered">
+                <!-- Informations légales -->
+                <div class="column is-8 has-text-centered">
+                    <p class="has-text-white">© 2024 Électricien Pro - Tous droits réservés.</p>
+                    <p class="has-text-white">
+                        <a href="mentions-legales.html" class="has-text-white">Mentions légales</a> | 
+                        <a href="politique-confidentialite.html" class="has-text-white">Politique de confidentialité</a> | 
+                        <a href="cookies.html" class="has-text-white">Politique des cookies</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inclure FontAwesome pour les icônes sociales -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+
+
+</body>
+</html>

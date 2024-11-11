@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Mon Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"> <!-- AOS CSS -->
+    <style>
+        /* Parallax effect for the cover image */
+        .image_de_garde {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fixed-image-container {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* L'image prend maintenant 80% de la hauteur de la fenêtre */
+            background: url('./img/page_de_garde.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.4); /* Légère transparence pour améliorer la lisibilité */
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 80%; /* Empêche que le texte prenne toute la largeur */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre douce autour du texte */
+        }
+
+        .overlay h2 {
+            font-size: 2.5rem; /* Grande taille pour le titre */
+            margin-bottom: 10px;
+        }
+
+        .overlay p {
+            font-size: 1.2rem; /* Taille du texte du sous-titre */
+        }
+
+        .section {
+            padding-top: 6rem; /* Pour que le contenu ne soit pas caché sous la barre de navigation fixe */
+        }
+
+        .box {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .fixed-image-container {
+                height: 60vh; /* Ajuste la hauteur de l'image pour les petits écrans */
+            }
+
+            .overlay h2 {
+                font-size: 2rem; /* Taille de texte réduite pour les petits écrans */
+            }
+
+            .overlay p {
+                font-size: 1rem; /* Taille de texte réduite pour les petits écrans */
+            }
+
+            .columns {
+                flex-direction: column;
+            }
+
+            .navbar-menu {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+        <!-- Menu de navigation -->
+    <nav class="navbar is-fixed-top">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                Mon Portfolio
+            </a>
+            <!-- Bouton Hamburger pour mobile -->
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="index.html">Accueil</a>
+                <a class="navbar-item" href="about.html">À propos</a>
+                <a class="navbar-item" href="devis.html">Devis</a>
+                <a class="navbar-item" href="works.html">Nos travaux</a>
+                <a class="navbar-item" href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Activer le menu burger sur mobile
+            const burgerIcon = document.querySelector('.navbar-burger');
+            const navbarMenu = document.querySelector('#navbarMenu');
+    
+            burgerIcon.addEventListener('click', () => {
+                navbarMenu.classList.toggle('is-active'); // Activer/désactiver le menu
+            });
+        });
+    </script>
+    
+
+    <!-- Image fixe avec texte superposé -->
+    <section class="image_de_garde" data-aos="fade-up">
+        <div class="fixed-image-container">
+            <div class="overlay">
+                <h2 class="is-size-2-tablet is-size-1-desktop">Travaux d'électricité de haute qualité</h2>
+                <p class="is-size-5-tablet is-size-4-desktop">Nous offrons des solutions complètes pour tous vos besoins en électricité.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section des services -->
+    <section class="section savoir-faire" data-aos="fade-up">
+        <div class="container">
+            <h2 class="title is-3 has-text-centered">Notre Savoir-Faire</h2>
+            <div class="columns is-multiline">
+                <!-- Service 1 -->
+                <div class="column is-one-quarter" data-aos="zoom-in-up" data-aos-delay="100">
+                    <div class="box">
+                        <figure class="image is-4by3">
+                            <img src="img/electrique.jpg" alt="Énergie électrique">
+                        </figure>
+                        <h3 class="subtitle">Énergie électrique – BT/HT</h3>
+                        <p>Nous installons des réseaux électriques fiables et performants, adaptés à vos besoins.</p>
+                        <a href="savoir-faire-electricite.html" class="button is-link is-small">En savoir plus</a>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="column is-one-quarter" data-aos="zoom-in-up" data-aos-delay="200">
+                    <div class="box">
+                        <figure class="image is-4by3">
+                            <img src="img/chauffage.jpg" alt="Chauffage Plomberie">
+                        </figure>
+                        <h3 class="subtitle">Chauffage Plomberie</h3>
+                        <p>...</p>
+                        <a href="savoir-faire-information.html" class="button is-link is-small">En savoir plus</a>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="column is-one-quarter" data-aos="zoom-in-up" data-aos-delay="300">
+                    <div class="box">
+                        <figure class="image is-4by3">
+                            <img src="img/sécurité.jpg" alt="Sûreté et sécurité">
+                        </figure>
+                        <h3 class="subtitle">Sûreté – Sécurité</h3>
+                        <p>Protégez vos biens et vos données avec nos systèmes de sécurité avancés.</p>
+                        <a href="savoir-faire-securite.html" class="button is-link is-small">En savoir plus</a>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="column is-one-quarter" data-aos="zoom-in-up" data-aos-delay="400">
+                    <div class="box">
+                        <figure class="image is-4by3">
+                            <img src="img/page_de_garde.jpg" alt="Gestion technique des bâtiments">
+                        </figure>
+                        <h3 class="subtitle">Gestion technique des bâtiments</h3>
+                        <p>Automatisation et optimisation énergétique pour des bâtiments intelligents.</p>
+                        <a href="savoir-faire-gestion.html" class="button is-link is-small">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section des réalisations -->
+    <section class="section references" data-aos="fade-up">
+        <div class="container">
+            <h2 class="title is-3 has-text-centered">Nos réalisations</h2>
+            <div class="columns">
+                <div class="column" data-aos="fade-right" data-aos-delay="500">
+                    <img src="./img/page_de_garde.jpg" alt="Référence 1">
+                    <p>Description de la réalisation avec un lien vers une vidéo YouTube</p>
+                </div>
+                <div class="column" data-aos="fade-up" data-aos-delay="600">
+                    <img src="./img/page_de_garde.jpg" alt="Référence 2">
+                    <p>Description de la réalisation avec un lien vers une vidéo YouTube</p>
+                </div>
+                <div class="column" data-aos="fade-left" data-aos-delay="700">
+                    <img src="./img/page_de_garde.jpg" alt="Référence 3">
+                    <p>Description de la réalisation avec un lien vers une vidéo YouTube</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script> <!-- AOS JS -->
+    <script>
+        AOS.init({ duration: 1000 }); // Initialiser AOS avec une durée d'animation de 1000ms
+    </script>
+
+
+        <!-- Bannière de consentement pour les cookies -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8">
+                    <p>Nous utilisons des cookies pour vous garantir la meilleure expérience sur notre site. Certains cookies sont nécessaires pour le fonctionnement du site, tandis que d'autres sont facultatifs et servent à analyser l'utilisation du site et à améliorer l'expérience utilisateur.</p>
+                </div>
+                <div class="column is-4">
+                    <button id="accept-cookies" class="button is-success">Accepter tous les cookies</button>
+                    <button id="manage-cookies" class="button is-link">Gérer les cookies</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de gestion des cookies -->
+    <div id="cookie-settings" class="cookie-settings-modal">
+        <div class="modal-content">
+            <h3 class="title">Gestion des Cookies</h3>
+            <p>Choisissez les cookies que vous souhaitez autoriser :</p>
+            <div class="cookie-options">
+                <label class="checkbox">
+                    <input type="checkbox" id="necessary-cookies" disabled checked> Cookies nécessaires (toujours activés)
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" id="analytics-cookies"> Cookies d'analyse (Google Analytics, etc.)
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox" id="marketing-cookies"> Cookies de marketing et personnalisation
+                </label>
+            </div>
+            <div class="buttons">
+                <button id="save-cookies" class="button is-primary">Enregistrer mes préférences</button>
+                <button id="close-settings" class="button is-light">Fermer</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Style du banner de cookies */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #4caf50;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            z-index: 1000;
+        }
+        .cookie-banner button {
+            margin: 0 10px;
+            padding: 10px 20px;
+        }
+
+        /* Style du modal de gestion des cookies */
+        .cookie-settings-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1100;
+            width: 80%;
+            max-width: 400px;
+        }
+        .cookie-options {
+            margin: 20px 0;
+        }
+    </style>
+
+    <script>
+        // Fonction pour afficher ou cacher la bannière
+        window.onload = function() {
+            if (!localStorage.getItem('cookies_accepted')) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
+        };
+
+        // Accepter tous les cookies
+        document.getElementById('accept-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookies_accepted', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+            // Enregistrez ici les cookies facultatifs si nécessaire (ex : Google Analytics)
+            enableCookies();
+        });
+
+        // Gérer les cookies
+        document.getElementById('manage-cookies').addEventListener('click', function() {
+            document.getElementById('cookie-settings').style.display = 'block';
+        });
+
+        // Enregistrer les préférences de cookies
+        document.getElementById('save-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookies_accepted', 'true');
+            document.getElementById('cookie-banner').style.display = 'none';
+            if (document.getElementById('analytics-cookies').checked) {
+                enableAnalyticsCookies();
+            }
+            if (document.getElementById('marketing-cookies').checked) {
+                enableMarketingCookies();
+            }
+            document.getElementById('cookie-settings').style.display = 'none';
+        });
+
+        // Fermer les paramètres de cookies sans sauvegarder
+        document.getElementById('close-settings').addEventListener('click', function() {
+            document.getElementById('cookie-settings').style.display = 'none';
+        });
+
+        // Fonction pour activer les cookies d'analyse
+        function enableAnalyticsCookies() {
+            // Exemple d'ajout de Google Analytics si accepté
+            console.log('Google Analytics activé');
+        }
+
+        // Fonction pour activer les cookies marketing
+        function enableMarketingCookies() {
+            // Exemple de cookies marketing si accepté
+            console.log('Cookies de marketing activés');
+        }
+
+        // Fonction pour activer les cookies nécessaires (toujours activés)
+        function enableCookies() {
+            console.log('Cookies nécessaires activés');
+        }
+    </script>
+
+
+            <!-- Pied de page -->
+    <footer class="footer has-background-success">
+        <div class="container">
+            <div class="columns is-mobile is-centered">
+                <!-- Logo Section -->
+                <div class="column is-4 has-text-centered">
+                    <img src="logo.png" alt="Logo de l'entreprise" style="max-width: 180px; height: auto;">
+                </div>
+
+                <!-- Liens utiles -->
+                <div class="column is-4">
+                    <h4 class="title is-5 has-text-white">Liens utiles</h4>
+                    <ul>
+                        <li><a href="index.html" class="has-text-white">Accueil</a></li>
+                        <li><a href="about.html" class="has-text-white">À propos</a></li>
+                        <li><a href="devis.html" class="has-text-white">Devis</a></li>
+                        <li><a href="works.html" class="has-text-white">Nos travaux</a></li>
+                        <li><a href="contact.html" class="has-text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div class="column is-4">
+                    <h4 class="title is-5 has-text-white">Suivez-nous</h4>
+                    <div class="buttons is-justify-content-center">
+                        <a href="https://www.facebook.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.twitter.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns is-mobile is-centered">
+                <!-- Informations légales -->
+                <div class="column is-8 has-text-centered">
+                    <p class="has-text-white">© 2024 Électricien Pro - Tous droits réservés.</p>
+                    <p class="has-text-white">
+                        <a href="mentions-legales.html" class="has-text-white">Mentions légales</a> | 
+                        <a href="politique-confidentialite.html" class="has-text-white">Politique de confidentialité</a> | 
+                        <a href="cookies.html" class="has-text-white">Politique des cookies</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inclure FontAwesome pour les icônes sociales -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos de nous - Électricien Pro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Base body style */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 80px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Section content */
+        .section {
+            padding: 50px 20px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+
+        .content h3 {
+            color: #2c3e50;
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-top: 30px;
+        }
+
+        .content ul {
+            padding-left: 20px;
+            list-style-type: disc;
+            margin-bottom: 30px;
+        }
+
+        .content ul li {
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+
+        /* Map section */
+        #map {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        /* Image gallery */
+        .columns img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 0.7s;
+        }
+
+        .columns img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 1s;
+        }
+
+        /* Hover effect for navbar items */
+        .navbar-item:hover {
+            background-color: rgba(0, 128, 0, 0.7);
+            border-radius: 5px;
+        }
+
+        /* Animation for elements appearing from the bottom */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px); /* Commence sous la page */
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0); /* Arrive à sa position finale */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu de navigation -->
+    <nav class="navbar is-fixed-top">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                Mon Portfolio
+            </a>
+            <!-- Bouton Hamburger pour mobile -->
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="index.html">Accueil</a>
+                <a class="navbar-item" href="about.html">À propos</a>
+                <a class="navbar-item" href="devis.html">Devis</a>
+                <a class="navbar-item" href="works.html">Nos travaux</a>
+                <a class="navbar-item" href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Activer le menu burger sur mobile
+            const burgerIcon = document.querySelector('.navbar-burger');
+            const navbarMenu = document.querySelector('#navbarMenu');
+    
+            burgerIcon.addEventListener('click', () => {
+                navbarMenu.classList.toggle('is-active'); // Activer/désactiver le menu
+            });
+        });
+    </script>
+
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="container">
+            <h2>À propos de nous</h2>
+            <p>Découvrez Électricien Pro, votre partenaire de confiance pour tous vos travaux électriques à Orléans. Nous offrons des services fiables, professionnels et personnalisés pour répondre à vos besoins.</p>
+        </div>
+    </section>
+
+    <!-- À propos de nous section -->
+    <section class="section">
+        <div class="container content">
+            <h3>Qui sommes-nous ?</h3>
+            <p>Chez <strong>Électricien Pro</strong>, nous mettons à votre disposition une équipe d’experts dans le domaine de l’électricité, disponible pour des projets résidentiels et commerciaux. Nous intervenons avec professionnalisme et réactivité pour tous vos travaux de rénovation, installation et maintenance électrique.</p>
+
+            <h3>Nos engagements</h3>
+            <p>Nous nous engageons à offrir des prestations de qualité, réalisées dans le respect des délais et des normes de sécurité les plus strictes. La satisfaction de nos clients est notre priorité.</p>
+
+            <h3>Nos domaines d'expertise</h3>
+            <ul>
+                <li>Installation de réseaux électriques complets</li>
+                <li>Mise aux normes de vos installations électriques</li>
+                <li>Solutions d’éclairage, de chauffage et de ventilation</li>
+                <li>Installation de systèmes de sécurité (alarme, vidéosurveillance)</li>
+                <li>Entretien et dépannage</li>
+            </ul>
+
+            <h3>Un service de proximité</h3>
+            <p>Implantés à Orléans, nous intervenons également dans les villes environnantes. Grâce à notre équipe disponible 7j/7, nous vous garantissons une grande réactivité et des interventions rapides.</p>
+
+            <!-- Carte Google Maps -->
+            <div id="map"></div>
+
+            <h3>Pourquoi nous choisir ?</h3>
+            <p>En choisissant <strong>Électricien Pro</strong>, vous optez pour un service sur mesure. Nous mettons un point d'honneur à comprendre vos besoins spécifiques et à vous offrir des solutions adaptées à votre budget.</p>
+        </div>
+    </section>
+
+    <!-- Galerie d'images -->
+    <section class="section">
+        <div class="container">
+            <div class="columns is-multiline">
+                <div class="column is-3">
+                    <img src="photo1.jpg" alt="Photo de réalisation 1">
+                </div>
+                <div class="column is-3">
+                    <img src="photo2.jpg" alt="Photo de réalisation 2">
+                </div>
+                <div class="column is-3">
+                    <img src="photo3.jpg" alt="Photo de réalisation 3">
+                </div>
+                <div class="column is-3">
+                    <img src="photo4.jpg" alt="Photo de réalisation 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Script Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-qFhNQKykrB1dxAMulOIPMkhcHqzJKHs"></script>
+    <script>
+        function initMap() {
+            // Coordonnées d'Orléans
+            const orleans = { lat: 47.902964, lng: 1.909251 };
+
+            // Créer la carte centrée sur Orléans
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 11,
+                center: orleans
+            });
+
+            // Ajouter un cercle de 20 km autour d'Orléans
+            new google.maps.Circle({
+                strokeColor: "#008000",
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: "#008000",
+                fillOpacity: 0.2,
+                map,
+                center: orleans,
+                radius: 100000 // Rayon de 20 km en mètres
+            });
+        }
+
+        // Initialiser la carte lorsque la page est chargée
+        window.onload = initMap;
+    </script>
+
+    <!-- Pied de page -->
+    <footer class="footer has-background-success">
+        <div class="container">
+            <div class="columns is-mobile is-centered">
+                <!-- Logo Section -->
+                <div class="column is-4 has-text-centered">
+                    <img src="logo.png" alt="Logo de l'entreprise" style="max-width: 180px; height: auto;">
+                </div>
+
+                <!-- Liens utiles -->
+                <div class="column is-4">
+                    <h4 class="title is-5 has-text-white">Liens utiles</h4>
+                    <ul>
+                        <li><a href="index.html" class="has-text-white">Accueil</a></li>
+                        <li><a href="about.html" class="has-text-white">À propos</a></li>
+                        <li><a href="devis.html" class="has-text-white">Devis</a></li>
+                        <li><a href="works.html" class="has-text-white">Nos travaux</a></li>
+                        <li><a href="contact.html" class="has-text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div class="column is-4">
+                    <h4 class="title is-5 has-text-white">Suivez-nous</h4>
+                    <div class="buttons is-justify-content-center">
+                        <a href="https://www.facebook.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.twitter.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns is-mobile is-centered">
+                <!-- Informations légales -->
+                <div class="column is-8 has-text-centered">
+                    <p class="has-text-white">© 2024 Électricien Pro - Tous droits réservés.</p>
+                    <p class="has-text-white">
+                        <a href="mentions-legales.html" class="has-text-white">Mentions légales</a> | 
+                        <a href="politique-confidentialite.html" class="has-text-white">Politique de confidentialité</a> | 
+                        <a href="cookies.html" class="has-text-white">Politique des cookies</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inclure FontAwesome pour les icônes sociales -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+
+</body>
+</html>

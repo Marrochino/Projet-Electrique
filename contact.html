@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nous contacter - Électricien Pro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Style global */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        
+
+        .title,
+        .subtitle {
+            color: #008000;
+        }
+
+        .faq-section {
+            background-color: #f5f5f5;
+            padding: 4rem 2rem;
+        }
+
+        .faq-title {
+            font-size: 2.5rem;
+            color: #008000;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .faq-answer {
+            padding: 1rem;
+            background-color: #fafafa;
+            color: #555;
+            line-height: 1.5;
+            border-radius: 5px;
+        }
+
+        .cta {
+            background-color: #f9f9f9;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta .title {
+            color: #333;
+        }
+
+        .cta .button {
+            margin: 1rem;
+        }
+
+        .social-icons a {
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .contact-form {
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer {
+            background-color: #008000;
+            padding: 1.5rem 0;
+            color: white;
+            text-align: center;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        .navbar-menu {
+            margin-left: auto;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .navbar-item {
+                font-size: 1.1rem;
+            }
+            .social-icons a {
+                margin: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Menu de navigation -->
+    <nav class="navbar is-fixed-top">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                Mon Portfolio
+            </a>
+            <!-- Bouton Hamburger pour mobile -->
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="index.html">Accueil</a>
+                <a class="navbar-item" href="about.html">À propos</a>
+                <a class="navbar-item" href="devis.html">Devis</a>
+                <a class="navbar-item" href="works.html">Nos travaux</a>
+                <a class="navbar-item" href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Activer le menu burger sur mobile
+            const burgerIcon = document.querySelector('.navbar-burger');
+            const navbarMenu = document.querySelector('#navbarMenu');
+    
+            burgerIcon.addEventListener('click', () => {
+                navbarMenu.classList.toggle('is-active'); // Activer/désactiver le menu
+            });
+        });
+    </script>
+
+    <!-- Section FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-title">Questions fréquentes</h2>
+
+            <div class="field">
+                <label for="searchQuestion" class="label">Posez votre question :</label>
+                <div class="control">
+                    <input class="input" type="text" id="searchQuestion" placeholder="Exemple: Quel type de travaux réalisez-vous ?" oninput="searchFAQ()">
+                </div>
+            </div>
+
+            <div id="faqAnswer" class="faq-answer">
+                <p>Commencez à taper une question pour obtenir une réponse...</p>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- Section Nous contacter -->
+    <section class="section">
+        <div class="container">
+            <h2 class="title has-text-centered">Nous contacter</h2>
+            <p class="has-text-centered">Appelez-nous au : <strong>01 23 45 67 89</strong></p>
+
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <div class="contact-form">
+                        <form action="envoyer-mail.php" method="POST">
+                            <div class="field">
+                                <label class="label">Nom</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="text" name="name" placeholder="Votre nom" required>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Email</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="email" name="email" placeholder="Votre email" required>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-envelope"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Message</label>
+                                <div class="control has-icons-left">
+                                    <textarea class="textarea" name="message" placeholder="Votre message" required></textarea>
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="control">
+                                <button class="button is-primary" type="submit">Envoyer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Restons en contact - Plus bas -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="title is-4">Restons en contact !</h2>
+            <p>Suivez-nous pour découvrir nos dernières réalisations et actualités.</p>
+            <div class="buttons is-centered">
+                <a href="tel:+330123456789" class="button is-primary"><i class="fas fa-phone-alt"></i> Appelez-nous maintenant</a>
+                <a href="mailto:contact@entreprise.com" class="button is-link"><i class="fas fa-envelope"></i> Envoyez un email</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/entreprise" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/entreprise" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/entreprise" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        // Liste des questions fréquentes et mots-clés associés
+        const faqData = [
+            {
+                question: 'Quels types de travaux réalisez-vous ?',
+                keywords: ['travaux', 'services', 'réalisez'],
+                answer: 'Nous proposons une gamme complète de services électriques, de l\'installation à la maintenance, en passant par les réparations urgentes.'
+            },
+            {
+                question: 'Intervenez-vous en urgence ?',
+                keywords: ['urgence', 'intervenez'],
+                answer: 'Oui, nous offrons un service d\'intervention d\'urgence disponible 24/7, pour résoudre vos problèmes électriques dans les plus brefs délais.'
+            },
+            {
+                question: 'Combien de temps prend une intervention typique ?',
+                keywords: ['temps', 'intervention'],
+                answer: 'La durée dépend de la complexité des travaux, mais nous faisons de notre mieux pour intervenir rapidement et efficacement.'
+            },
+            {
+                question: 'Quels types de clients servez-vous ?',
+                keywords: ['clients', 'types'],
+                answer: 'Nous intervenons aussi bien pour des particuliers que pour des entreprises, en adaptant nos services à chaque besoin spécifique.'
+            },
+            {
+                question: 'Offrez-vous des garanties sur vos travaux ?',
+                keywords: ['garantie', 'travaux'],
+                answer: 'Oui, tous nos travaux sont couverts par une garantie. Nous assurons la qualité et la sécurité de nos installations.'
+            },
+            {
+                question: 'Quels sont les moyens de paiement acceptés ?',
+                keywords: ['moyens', 'paiement'],
+                answer: 'Nous acceptons les paiements par carte bancaire, chèque, et virement bancaire.'
+            },
+            {
+                question: 'Proposez-vous des devis gratuits ?',
+                keywords: ['devis', 'gratuits'],
+                answer: 'Oui, nous proposons des devis gratuits pour évaluer vos besoins et vous donner une estimation des coûts avant de commencer les travaux.'
+            },
+            {
+                question: 'Quels services proposez-vous pour les entreprises ?',
+                keywords: ['services', 'entreprises'],
+                answer: 'Nous offrons des services adaptés aux entreprises, tels que l\'installation de systèmes électriques complexes, l\'entretien des installations et la mise aux normes des locaux.'
+            },
+            {
+                question: 'Comment obtenir un devis pour mes travaux ?',
+                keywords: ['devis', 'obtenir', 'travaux'],
+                answer: 'Il suffit de nous contacter pour expliquer vos besoins, et nous vous fournirons un devis gratuit et détaillé pour vos travaux.'
+            },
+            {
+                question: 'Que faire en cas de panne électrique en dehors des heures normales ?',
+                keywords: ['panne', 'électrique', 'urgence'],
+                answer: 'Nous offrons un service d\'urgence 24/7. Contactez-nous directement pour une intervention rapide, même en dehors des heures normales.'
+            }
+        ];
+
+        // Fonction de recherche dans la FAQ
+        function searchFAQ() {
+            const userQuery = document.getElementById('searchQuestion').value.toLowerCase();
+            const answerElement = document.getElementById('faqAnswer');
+            let bestMatch = 'Aucune réponse trouvée. Contactez nous directement !';
+            const queryWords = userQuery.split(/\s+/); // Séparer la requête par mots
+
+            if (userQuery) {
+                for (const faq of faqData) {
+                    const matchingKeywords = faq.keywords.filter(keyword => queryWords.includes(keyword));
+                    if (matchingKeywords.length > 0) {
+                        bestMatch = faq.answer;
+                        break;
+                    }
+                }
+            }
+
+            answerElement.innerHTML = `<p>${bestMatch}</p>`;
+        }
+    </script>
+
+    <!-- Pied de page -->
+    <footer class="footer has-background-success">
+        <div class="container">
+            <div class="columns is-mobile is-centered">
+                <!-- Logo Section -->
+                <div class="column is-4 has-text-centered">
+                    <img src="logo.png" alt="Logo de l'entreprise" style="max-width: 180px; height: auto;">
+                </div>
+
+                <!-- Liens utiles -->
+                <div class="column is-4">
+                    <h4 class="title is-5 has-text-white">Liens utiles</h4>
+                    <ul>
+                        <li><a href="index.html" class="has-text-white">Accueil</a></li>
+                        <li><a href="about.html" class="has-text-white">À propos</a></li>
+                        <li><a href="devis.html" class="has-text-white">Devis</a></li>
+                        <li><a href="works.html" class="has-text-white">Nos travaux</a></li>
+                        <li><a href="contact.html" class="has-text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div class="column is-4">
+                    <h4 class="title is-5 has-text-white">Suivez-nous</h4>
+                    <div class="buttons is-justify-content-center">
+                        <a href="https://www.facebook.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.twitter.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns is-mobile is-centered">
+                <!-- Informations légales -->
+                <div class="column is-8 has-text-centered">
+                    <p class="has-text-white">© 2024 Électricien Pro - Tous droits réservés.</p>
+                    <p class="has-text-white">
+                        <a href="mentions-legales.html" class="has-text-white">Mentions légales</a> | 
+                        <a href="politique-confidentialite.html" class="has-text-white">Politique de confidentialité</a> | 
+                        <a href="cookies.html" class="has-text-white">Politique des cookies</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inclure FontAwesome pour les icônes sociales -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+
+
+</body>
+
+</html>

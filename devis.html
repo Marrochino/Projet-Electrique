@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devis - Mon Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f4f7fa;
+        }
+
+        
+
+        .title.has-text-centered {
+            color: #2ecc71;
+        }
+
+        .section {
+            padding-top: 80px;
+        }
+
+        .button.is-primary {
+            background-color: #2ecc71;
+            color: white;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .button.is-primary:hover {
+            background-color: #27ae60;
+        }
+
+        .services-icons i {
+            font-size: 40px;
+            color: #2ecc71;
+            margin-bottom: 10px;
+        }
+
+        .service-item {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* New section for testimonials and details */
+        .testimonials {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .testimonials h2 {
+            color: #2ecc71;
+        }
+
+        .testimonial-item {
+            margin-bottom: 20px;
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+            color: #555;
+        }
+
+        .faq-section {
+            margin-top: 40px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h3 {
+            color: #2ecc71;
+        }
+
+        .faq-item p {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu de navigation -->
+    <nav class="navbar is-fixed-top">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                Mon Portfolio
+            </a>
+            <!-- Bouton Hamburger pour mobile -->
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item" href="index.html">Accueil</a>
+                <a class="navbar-item" href="about.html">À propos</a>
+                <a class="navbar-item" href="devis.html">Devis</a>
+                <a class="navbar-item" href="works.html">Nos travaux</a>
+                <a class="navbar-item" href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Activer le menu burger sur mobile
+            const burgerIcon = document.querySelector('.navbar-burger');
+            const navbarMenu = document.querySelector('#navbarMenu');
+    
+            burgerIcon.addEventListener('click', () => {
+                navbarMenu.classList.toggle('is-active'); // Activer/désactiver le menu
+            });
+        });
+    </script>
+
+    <!-- Section de présentation des devis -->
+    <section class="section">
+        <div class="container">
+            <h1 class="title has-text-centered">Obtenez un Devis Personnalisé</h1>
+            <p class="has-text-centered">Nous vous proposons un devis personnalisé en fonction de vos besoins. Que ce soit pour une installation, une rénovation ou un entretien, nous nous adaptons à vos exigences et votre budget. N'attendez plus pour discuter de votre projet !</p>
+
+            <h2 class="subtitle">Nos domaines d'intervention</h2>
+            <div class="columns is-centered">
+                <div class="column is-3">
+                    <div class="service-item">
+                        <i class="fas fa-plug"></i>
+                        <p><strong>Installation de systèmes électriques</strong><br/>Nous intervenons sur les installations électriques BT/HT, pour tous types de bâtiments (résidentiels, commerciaux, industriels). Nous assurons la conformité et la sécurité de chaque installation.</p>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="service-item">
+                        <i class="fas fa-network-wired"></i>
+                        <p><strong>Solutions de réseaux et informatique</strong><br/>Nous réalisons l'installation de câblage réseaux et solutions IT, pour garantir une infrastructure fiable et performante pour vos bureaux ou sites industriels.</p>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="service-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <p><strong>Systèmes de sécurité et surveillance</strong><br/>Nous proposons des installations de systèmes de vidéosurveillance, contrôle d'accès, alarmes, pour protéger vos biens et sécuriser vos espaces.</p>
+                    </div>
+                </div>
+                <div class="column is-3">
+                    <div class="service-item">
+                        <i class="fas fa-building"></i>
+                        <p><strong>Gestion technique des bâtiments (GTB)</strong><br/>Nous mettons en place des systèmes de gestion pour optimiser la performance énergétique, la sécurité et le confort de vos bâtiments.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bouton pour demander un devis -->
+            <div class="has-text-centered" style="margin-top: 20px;">
+                <a href="demande-de-devis.html" class="button is-primary is-large">Demander un devis</a>
+            </div>
+
+            <!-- Section témoignages -->
+            <div class="testimonials">
+                <h2 class="title is-4 has-text-centered">Ce que disent nos clients</h2>
+                <div class="testimonial-item">
+                    <p>"Une équipe professionnelle et réactive, qui a su répondre à toutes nos attentes. Le devis était très clair et le travail impeccable. Je recommande vivement !" - <strong>Jean Dupont</strong></p>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Le devis a été rapide et détaillé. Ils ont respecté les délais et ont su s'adapter à nos besoins spécifiques. Très satisfait de leur prestation." - <strong>Marie Leblanc</strong></p>
+                </div>
+            </div>
+
+            <!-- Section FAQ -->
+            <div class="faq-section">
+                <h2 class="title is-4 has-text-centered">Questions Fréquentes</h2>
+                <div class="faq-item">
+                    <h3>Quels types de travaux peuvent être inclus dans un devis ?</h3>
+                    <p>Nos devis couvrent tous types de travaux électriques : installations neuves, rénovations, mise aux normes, maintenance, systèmes de sécurité, etc. Nous personnalisons chaque devis selon vos besoins.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Les devis sont-ils gratuits ?</h3>
+                    <p>Oui, tous nos devis sont gratuits. Nous vous fournirons une estimation détaillée sans engagement de votre part.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Combien de temps faut-il pour obtenir un devis ?</h3>
+                    <p>Nous nous engageons à vous fournir un devis sous 24 à 48 heures après réception de votre demande et des détails nécessaires.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Le devis inclut-il la main-d'œuvre et le matériel ?</h3>
+                    <p>Oui, notre devis inclut à la fois la main-d'œuvre et le matériel nécessaire à l'exécution des travaux, ainsi que les délais de réalisation. Le tout sera détaillé pour que vous sachiez exactement ce pour quoi vous payez.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="footer has-background-success">
+        <div class="container">
+            <div class="columns is-mobile is-centered">
+                <!-- Logo Section -->
+                <div class="column is-4 has-text-centered">
+                    <img src="logo.png" alt="Logo de l'entreprise" style="max-width: 180px; height: auto;">
+                </div>
+
+                <!-- Liens utiles -->
+                <div class="column is-4">
+                    <h4 class="title is-5 has-text-white">Liens utiles</h4>
+                    <ul>
+                        <li><a href="index.html" class="has-text-white">Accueil</a></li>
+                        <li><a href="about.html" class="has-text-white">À propos</a></li>
+                        <li><a href="devis.html" class="has-text-white">Devis</a></li>
+                        <li><a href="works.html" class="has-text-white">Nos travaux</a></li>
+                        <li><a href="contact.html" class="has-text-white">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div class="column is-4">
+                    <h4 class="title is-5 has-text-white">Suivez-nous</h4>
+                    <div class="buttons is-justify-content-center">
+                        <a href="https://www.facebook.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.twitter.com/entreprise" target="_blank" class="button is-light is-rounded is-large">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="columns is-mobile is-centered">
+                <!-- Informations légales -->
+                <div class="column is-8 has-text-centered">
+                    <p class="has-text-white">© 2024 Électricien Pro - Tous droits réservés.</p>
+                    <p class="has-text-white">
+                        <a href="mentions-legales.html" class="has-text-white">Mentions légales</a> | 
+                        <a href="politique-confidentialite.html" class="has-text-white">Politique de confidentialité</a> | 
+                        <a href="cookies.html" class="has-text-white">Politique des cookies</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inclure FontAwesome pour les icônes sociales -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+
+
+</body>
+</html>
